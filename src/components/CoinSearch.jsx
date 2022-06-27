@@ -8,7 +8,6 @@ const CoinSearch = ({coins}) => {
   const handleChange = (event) => {
     setSearchText(event.target.value);
   } 
-  console.log(coins);
   return (
     <div className="rounded-div my-4">
       <div className="flex flex-col md:flex-row justify-between pt-4 pb-6 text-center md:text-right">

@@ -22,7 +22,7 @@ const CoinItem = ( {coin} ) => {
         <td className="w-[180px] hidden sm:table-cell">{coin.market_cap.toLocaleString()}</td>
         
         <td>
-        <Sparklines data={coin.sparkline_in_7d.price} width={100} height={20}>
+        <Sparklines data={coin.sparkline_in_7d.price}>
             <SparklinesLine color="green" style={{ fill: "none" }}/>
         </Sparklines>
         </td>

@@ -1,11 +1,13 @@
-import React from 'react'
-import CoinSearch from '../components/CoinSearch'
+import React from 'react';
+import CoinSearch from '../components/CoinSearch';
+import Trending from "../components/Trending";
 
 function Home( {coins, loading} ) {
   return (
-    <div>
+    <>
       {loading ? <div>LOADING...</div> : <CoinSearch coins={coins} />}
-    </div>
+      <Trending />
+    </>
   )
 }
 
