@@ -1,8 +1,11 @@
 import React from 'react'
+import CoinSearch from '../components/CoinSearch'
 
-function Home() {
+function Home( {coins, loading} ) {
   return (
-    <div>Home</div>
+    <div>
+      {loading ? <div>LOADING...</div> : <CoinSearch coins={coins} />}
+    </div>
   )
 }
 
