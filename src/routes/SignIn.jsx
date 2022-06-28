@@ -13,7 +13,7 @@ function SignIn() {
             <label htmlFor="">Email</label>
             <div className="my-2 w-full relative rounded-2xl shadow-xl">
               <input className="w-full p-2 bg-primary border border-input rounded-2xl" type="email" />
-              <AiOutlineMail className="absolute right-2 top-3 text-gray-400"/>
+              <AiOutlineMail className="absolute right-2 top-3 text-gray-400" />
             </div>
           </div>
           <div className="my-4">

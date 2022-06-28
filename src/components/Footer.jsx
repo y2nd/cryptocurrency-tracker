@@ -49,11 +49,11 @@ const Footer = () => {
                         </div>
 
                         <div className="flex justify-around text-xl">
-                            <AiOutlineInstagram className="text-orange-600"/>
+                            <AiOutlineInstagram className="text-[#d50523]"/>
                             <FaFacebook className="text-blue-500"/>
                             <FaGithub />
                             <FaTwitter className="text-cyan-500"/>
-                            <FaReddit className="text-orange-800"/>
+                            <FaReddit className="text-[#ff4500]"/>
                         </div>
                     </div>
                 </div>
