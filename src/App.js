@@ -10,6 +10,7 @@ import CoinPage from "./routes/CoinPage";
 import axios from "axios";
 
 import { ThemeProvider } from "./context/ThemeContext";
+import Footer from "./components/Footer";
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
           <Route />
         </Route>
       </Routes>
+      <Footer />
     </ThemeProvider>
   );
 }
