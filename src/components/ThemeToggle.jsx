@@ -16,7 +16,7 @@ const ThemeToggle = () => {
 
     return (
         <div>
-            {theme === "dark" ? wrapper( (<><HiSun className="text-primary text-2xl text-yellow-300 mr-2"/>Light Mode</> )) : wrapper( (<><HiMoon className="text-primary text-2xl mr-2"/>Dark mode</>) )}
+            {theme === "dark" ? wrapper( (<><HiSun className="text-primary text-2xl text-yellow-400 mr-2"/>Light Mode</> )) : wrapper( (<><HiMoon className="text-primary text-2xl mr-2"/>Dark mode</>) )}
         </div>
     )
 }
