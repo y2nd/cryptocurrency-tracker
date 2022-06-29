@@ -11,6 +11,7 @@ import axios from "axios";
 
 import { ThemeProvider } from "./context/ThemeContext";
 import Footer from "./components/Footer";
+import { AuthContextProvider } from "./context/AuthContext";
 
 function App() {
 
@@ -29,17 +30,19 @@ function App() {
 
   return (
     <ThemeProvider>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Home coins ={coins} loading={isLoading} />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/account" element={<Account />} />
-        <Route path="/coin/:coinId" element={<CoinPage />}>
-          <Route />
-        </Route>
-      </Routes>
-      <Footer />
+      <AuthContextProvider>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home coins ={coins} loading={isLoading} />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/account" element={<Account />} />
+          <Route path="/coin/:coinId" element={<CoinPage />}>
+            <Route />
+          </Route>
+        </Routes>
+        <Footer />
+      </AuthContextProvider>
     </ThemeProvider>
   );
 }
