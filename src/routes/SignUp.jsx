@@ -17,9 +17,10 @@ function SignUp() {
 
     try {
       await signUp(email, password);
+      // navigate("/account");
     } catch (error) {
       setError(error.message);
-      console.log(error.message);
+      // console.log(error.message);
     }
   };
 

@@ -1,15 +1,30 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ThemeToggle from './ThemeToggle';
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { UserAuth } from '../context/AuthContext';
 
 const NavBar = () => {
 
+
     const [isOpen, setIsOpen] = useState(false);
+
+    const {user, logOut} = UserAuth();
+
+    const navigate = useNavigate();
 
     const handleMenu = () => {
         setIsOpen(!isOpen);
     }
+
+    const handleSignOut = async () => {
+        try {
+          await logOut();
+          navigate("/");
+        } catch(error) {
+          console.log(error.message);
+        }
+      }
 
   return (
     <div className="rounded-div flex items-center justify-between h-20 font-bold">
@@ -19,10 +34,18 @@ const NavBar = () => {
         <div className="hidden md:block">
             <ThemeToggle />
         </div>
-        <div className="hidden md:block">
-            <Link to={"/signin"} className="p-4 hover:text-accent">Sign In</Link>
-            <Link to={"/signup"} className="bg-button text-btnText px-5 py-2 ml-2 rounded-2xl shadow-lg hover:shadow-2xl">Sign Up</Link>
-        </div>
+        
+        { user?.email ? (
+            <div className="">
+                <Link to={"/account"} className="bg-button text-btnText px-5 py-2 ml-2 rounded-2xl shadow-lg hover:shadow-2xl">Account</Link>
+                <button className="bg-yellow-600 text-btnText px-5 py-2 ml-2 rounded-2xl shadow-lg hover:shadow-2xl" onClick={handleSignOut}>Sign Out</button>
+            </div>
+        ) : (
+            <div className="hidden md:block">
+                <Link to={"/signin"} className="p-4 hover:text-accent">Sign In</Link>
+                <Link to={"/signup"} className="bg-button text-btnText px-5 py-2 ml-2 rounded-2xl shadow-lg hover:shadow-2xl">Sign Up</Link>
+            </div>
+        )}
 
         {/* Menu Icon */}
         <div className="block md:hidden cursor-pointer z-10" onClick={handleMenu}>

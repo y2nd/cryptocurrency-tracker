@@ -29,7 +29,7 @@ function SignIn() {
     <div>
       <div className="max-w-[400px] mx-auto min-h-[600px] px-4 py-20">
         <h1 className="text-2xl font-bold">Sign In</h1>
-        <p className="bg-red-400 p-3 my-2 rounded-md text-white">{error.replace("Firebase: ", '')}</p>
+        {error ? <p className="bg-red-400 p-3 my-2 rounded-md text-white">{error.replace("Firebase: ", '')}</p> : null}
         <form action="" onSubmit={handleSubmit}>
           <div className="my-4">
             <label htmlFor="">Email</label>
