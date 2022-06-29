@@ -13,6 +13,7 @@ function SignIn() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    navigate("/account");
     setError('');
 
     try {
