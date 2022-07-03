@@ -18,7 +18,12 @@ export const AuthContextProvider = ( {children} ) => {
     const [user, setUser] = useState({});
 
     const signUp = (email, password) => {
-        createUserWithEmailAndPassword(auth, email, password);
+        createUserWithEmailAndPassword(auth, email, password).catch((error) => {
+            if(error === "auth/weak-password")
+                alert("password too weak");
+            if(error === "auth/email-already-in-use")
+                alert("Email in use already");
+        });
         return setDoc(doc(db, "users", email), {
             watchList: [],
         });
