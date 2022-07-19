@@ -59,7 +59,7 @@ const Footer = () => {
                 </div>
             </div>
         </div>
-        <p className="py-4 text-center">Powered by Coin Gecko. Made with <AiFillHeart className="text-red-500 mx-1 inline"  /> by Liam</p>
+        <p className="py-4 text-center">Powered by Coin Gecko. Made with <AiFillHeart className="text-red-500 mx-1 inline"  /> by Y2nd</p>
     </div>
   )
 }
