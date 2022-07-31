@@ -21,7 +21,7 @@ const SavedCoins = () => {
 
     const deleteCoin = async (id) => {
         try {
-            const result = coins.filter( (item) => item.id !== id);
+            const result = coins?.filter( (item) => item.id !== id);
             await updateDoc(coinPath, {
                 watchList: result,
             });
@@ -43,7 +43,7 @@ const SavedCoins = () => {
                     
                 </thead>
                 <tbody>
-                    {coins.map( (coin) => (
+                    {coins?.map( (coin) => (
                         <tr key={coin.id} className="h-[60px] overflow-hidden">
                             <td>{coin?.rank}</td>
                             <td>
