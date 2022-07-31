@@ -4,7 +4,7 @@ import { Sparklines, SparklinesLine } from "react-sparklines";
 import { Link } from "react-router-dom";
 import {UserAuth} from "../context/AuthContext";
 import {db} from "../firebase";
-import {arrayUnion, doc, updatedDate, updateDoc} from "firebase/firestore"; 
+import {arrayUnion, doc, updateDoc} from "firebase/firestore"; 
 
 const CoinItem = ( {coin} ) => {
 
